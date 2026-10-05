@@ -1,0 +1,20 @@
+# Figure build outputs — regenerate with `python scripts/figN_*.py`
+scripts/*.pdf
+scripts/*.png
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Paper Lab working state
+build/
+logs/
+_preview/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

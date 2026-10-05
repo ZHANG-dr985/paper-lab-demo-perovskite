@@ -1,0 +1,57 @@
+{
+  "kind": "heatmap",
+  "name": "fig2_monthly_heatmap",
+  "style": "nature",
+  "data": {
+    "file": "data/GLB.Ts+dSST.csv",
+    "melt": {
+      "idVars": [
+        "Year"
+      ],
+      "valueName": "Anomaly",
+      "valueVars": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "varName": "Month"
+    },
+    "naValues": [
+      "***"
+    ],
+    "numeric": [
+      "Year"
+    ],
+    "skipRows": 1
+  },
+  "x": "Year",
+  "y": "Anomaly",
+  "hue": "Month",
+  "labels": {
+    "colorbar": "Anomaly (°C)",
+    "x": "Calendar month",
+    "y": "Year"
+  },
+  "columns": 2,
+  "height_in": 5.2,
+  "formats": [
+    "pdf",
+    "png"
+  ],
+  "dpi": 600,
+  "caption": "Monthly global mean surface temperature anomalies by year and calendar month (GISTEMP v4, land–ocean, relative to 1951–1980).",
+  "cmap": "RdBu_r",
+  "row_label_step": 10,
+  "vmax": 2,
+  "vmin": -2,
+  "expectSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9"
+}

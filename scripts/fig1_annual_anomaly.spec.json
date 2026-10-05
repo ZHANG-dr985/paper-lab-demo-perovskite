@@ -1,0 +1,50 @@
+{
+  "kind": "line",
+  "name": "fig1_annual_anomaly",
+  "style": "nature",
+  "data": {
+    "file": "data/GLB.Ts+dSST.csv",
+    "naValues": [
+      "***"
+    ],
+    "numeric": [
+      "J-D"
+    ],
+    "skipRows": 1
+  },
+  "x": "Year",
+  "y": "J-D",
+  "labels": {
+    "x": "Year",
+    "y": "Temperature anomaly (°C)"
+  },
+  "trend": true,
+  "trend_per": 10,
+  "summary": true,
+  "ranges": [
+    {
+      "from": 1880,
+      "label": "1880-1900",
+      "to": 1900
+    },
+    {
+      "from": 1981,
+      "label": "1981-2010 baseline",
+      "to": 2010
+    },
+    {
+      "from": 2015,
+      "label": "2015-present",
+      "to": 2030
+    }
+  ],
+  "columns": 1,
+  "height_in": 2.5,
+  "formats": [
+    "pdf",
+    "png"
+  ],
+  "dpi": 600,
+  "caption": "Annual global mean surface temperature anomaly (land–ocean, relative to the 1951–1980 mean) from the GISTEMP v4 record. The dashed line is an ordinary least-squares fit over all annual values.",
+  "expectSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9"
+}

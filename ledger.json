@@ -1,0 +1,1207 @@
+{
+  "version": 1,
+  "datasets": [
+    {
+      "id": "ds-mupbg86rdzudey",
+      "file": "data/GLB.Ts+dSST.csv",
+      "sha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "bytes": 12887,
+      "origin": "NASA Goddard Institute for Space Studies (GISS), GISTEMP v4 Team. 数据集 \"Land-Ocean: Global Means (GLB.Ts+dSST.csv)\"，直接下载自 https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv ，下载日期 2026-02-18。方法学引用 Lenssen et al. 2019, DOI 10.1029/2018JD029522。",
+      "source": "10.1029/2018JD029522",
+      "description": "GISTEMP v4 Land-Ocean Global Means 月度/年度温度距平（相对 1951-1980 基准）",
+      "registeredAt": "2026-10-01T09:12:47.475Z",
+      "verifiedAt": "2026-10-01T09:13:22.361Z",
+      "revisions": []
+    }
+  ],
+  "facts": [
+    {
+      "id": "fact-mupmwznnyqis14",
+      "label": "2025 年全球平均温度距平（陆海，相对 1951-1980）",
+      "value": 1.19,
+      "unit": "°C",
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "scripts/fig1_annual_anomaly.py → compute_summary(): J-D 列最后一年取值",
+      "where": [
+        "src/manuscript.md#results"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:33:45.347Z"
+    },
+    {
+      "id": "fact-mupmwznn7t6t8w",
+      "label": "1880-2025 年线性增温趋势",
+      "value": 0.0834,
+      "unit": "°C per decade",
+      "uncertainty": 0.0038,
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "scripts/fig1_annual_anomaly.py → compute_summary(): slope_per_x×10，标准误 slope_se×10",
+      "where": [
+        "src/manuscript.md#abstract",
+        "src/manuscript.md#results"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:33:45.347Z"
+    },
+    {
+      "id": "fact-mupmwznnrf00b3",
+      "label": "年度距平序列的线性拟合 R²",
+      "value": 0.768,
+      "unit": "1",
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "scripts/fig1_annual_anomaly.py → compute_summary(): r2",
+      "where": [
+        "src/manuscript.md#results"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:33:45.347Z"
+    },
+    {
+      "id": "fact-mupmwznnf5m7u8",
+      "label": "参与趋势拟合的年数 n",
+      "value": 146,
+      "unit": "years",
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "scripts/fig1_annual_anomaly.py → compute_summary(): count（J-D 非缺失）",
+      "where": [
+        "src/manuscript.md#results"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:33:45.347Z"
+    },
+    {
+      "id": "fact-mupmwznnmhujn5",
+      "label": "1880-1900 年平均温度距平",
+      "value": -0.224,
+      "unit": "°C",
+      "uncertainty": 0.095,
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "scripts/fig1_annual_anomaly.py → compute_summary(): ranges['1880-1900'].mean / .std，n=21",
+      "where": [
+        "src/manuscript.md#results"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:33:45.347Z"
+    },
+    {
+      "id": "fact-mupmwznoq31hwo",
+      "label": "1981-2010 年平均温度距平",
+      "value": 0.423,
+      "unit": "°C",
+      "uncertainty": 0.179,
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "scripts/fig1_annual_anomaly.py → compute_summary(): ranges['1981-2010 baseline'].mean / .std，n=30",
+      "where": [
+        "src/manuscript.md#results"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:33:45.348Z"
+    },
+    {
+      "id": "fact-mupmwznodyju0a",
+      "label": "2015-2025 年平均温度距平",
+      "value": 1.005,
+      "unit": "°C",
+      "uncertainty": 0.149,
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "scripts/fig1_annual_anomaly.py → compute_summary(): ranges['2015-present'].mean / .std，n=11",
+      "where": [
+        "src/manuscript.md#abstract",
+        "src/manuscript.md#results"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:33:45.348Z"
+    },
+    {
+      "id": "fact-mupmwzno329qeb",
+      "label": "2015-2025 年相对 1880-1900 年的增温幅度",
+      "value": 1.229,
+      "unit": "°C",
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "1.0054545454545456 − (−0.22380952380952382)，两个区间均值之差（scripts/fig1_annual_anomaly.py 输出）",
+      "where": [
+        "src/manuscript.md#abstract",
+        "src/manuscript.md#results"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:33:45.348Z"
+    },
+    {
+      "id": "fact-mupmzbnnt3p2w9",
+      "label": "2010s 年平均温度距平",
+      "value": 0.807,
+      "unit": "°C",
+      "uncertainty": 0.045,
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "scripts/fig3_decadal_means.py → 完整十年（n=10）均值",
+      "where": [
+        "src/manuscript.md#results"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:35:34.211Z"
+    },
+    {
+      "id": "fact-mupmzbnnedm2si",
+      "label": "1910s 年平均温度距平（全序列最低十年）",
+      "value": -0.335,
+      "unit": "°C",
+      "uncertainty": 0.035,
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "scripts/fig3_decadal_means.py → 完整十年（n=10）均值，全序列最低",
+      "where": [
+        "src/manuscript.md#results"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:35:34.211Z"
+    },
+    {
+      "id": "fact-mupmzbnncc34vl",
+      "label": "2010s 相对 1880s 的十年均值差",
+      "value": 1.025,
+      "unit": "°C",
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "0.807 − (−0.218)，scripts/fig3_decadal_means.py 输出的 2010s 与 1880s 十年均值之差",
+      "where": [
+        "src/manuscript.md#results"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:35:34.211Z"
+    },
+    {
+      "id": "fact-mupmzbnnlf3mgz",
+      "label": "1980s 至 2010s 的十年际增温速率",
+      "value": 0.187,
+      "unit": "°C per decade",
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "(0.807 − 0.247) / 3，2010s 与 1980s 十年均值之差除以 3 个十年",
+      "where": [
+        "src/manuscript.md#discussion"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:35:34.211Z"
+    },
+    {
+      "id": "fact-mupn0e0vu4nn84",
+      "label": "1880–1900 区间参与统计的年数 n",
+      "value": 21,
+      "unit": "years",
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "scripts/fig1_annual_anomaly.py → compute_summary(): ranges['1880-1900'].n",
+      "where": [
+        "src/manuscript.md#methods"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:36:23.935Z"
+    },
+    {
+      "id": "fact-mupn0e0vwat8l7",
+      "label": "1981–2010 基准区间年数 n",
+      "value": 30,
+      "unit": "years",
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "scripts/fig1_annual_anomaly.py → compute_summary(): ranges['1981-2010 baseline'].n",
+      "where": [
+        "src/manuscript.md#methods"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:36:23.935Z"
+    },
+    {
+      "id": "fact-mupn0e0vtibybz",
+      "label": "GISTEMP v4 报告的全球年均 95% 不确定性（文献值）",
+      "value": 0.05,
+      "unit": "°C",
+      "citationKey": "lenssen2019improvements",
+      "derivedBy": "Lenssen et al. 2019 摘要原文：“The resulting 95% uncertainties are near 0.05 °C”",
+      "where": [
+        "src/manuscript.md#discussion"
+      ],
+      "note": "文献自报值，非本项目计算，用于与本文未传播不确定度的局限做对比",
+      "recordedAt": "2026-10-01T14:36:23.935Z"
+    },
+    {
+      "id": "fact-mupnrsr7g4mjak",
+      "label": "1880 年全球平均温度距平（序列首值）",
+      "value": -0.18,
+      "unit": "°C",
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "scripts/fig1_annual_anomaly.py → compute_summary(): first.y（1880 年 J-D）",
+      "where": [
+        "src/manuscript.md#results"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:57:42.739Z"
+    },
+    {
+      "id": "fact-mupnrsr7hmygv1",
+      "label": "1880–2025 年度距平的算术均值",
+      "value": 0.081,
+      "unit": "°C",
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "scripts/fig1_annual_anomaly.py → compute_summary(): mean（J-D，n=146）",
+      "where": [
+        "src/manuscript.md#results"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:57:42.739Z"
+    },
+    {
+      "id": "fact-mupnrsr76ealw8",
+      "label": "1880–2025 年度距平的样本标准差",
+      "value": 0.403,
+      "unit": "°C",
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "scripts/fig1_annual_anomaly.py → compute_summary(): std（J-D，样本标准差，n=146）",
+      "where": [
+        "src/manuscript.md#results"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:57:42.739Z"
+    },
+    {
+      "id": "fact-mupnrsr70l1i8w",
+      "label": "1910s 十年内年度距平的标准差",
+      "value": 0.11,
+      "unit": "°C",
+      "uncertainty": 0.035,
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "scripts/fig3_decadal_means.py → compute_summary(): ranges['1910s'].std",
+      "where": [
+        "src/manuscript.md#results",
+        "src/manuscript.md#tab:intervals"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:57:42.739Z"
+    },
+    {
+      "id": "fact-mupnrsr76wc4r9",
+      "label": "2010s 十年内年度距平的标准差",
+      "value": 0.143,
+      "unit": "°C",
+      "uncertainty": 0.045,
+      "dataset": "data/GLB.Ts+dSST.csv",
+      "datasetSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9",
+      "derivedBy": "scripts/fig3_decadal_means.py → compute_summary(): ranges['2010s'].std",
+      "where": [
+        "src/manuscript.md#results",
+        "src/manuscript.md#tab:intervals"
+      ],
+      "note": "",
+      "recordedAt": "2026-10-01T14:57:42.739Z"
+    },
+    {
+      "id": "fact-mupnrsr7lwr5uv",
+      "label": "HadCRUT4 近期数十年的全球覆盖率（文献值）",
+      "value": 84,
+      "unit": "%",
+      "citationKey": "cowtan2013coverage",
+      "derivedBy": "Cowtan & Way 2013 摘要原文：“HadCRUT4 dataset covers on average about 84% of the globe over recent decades”",
+      "where": [
+        "src/manuscript.md#introduction"
+      ],
+      "note": "文献自报值，用于说明空间覆盖问题",
+      "recordedAt": "2026-10-01T14:57:42.739Z"
+    },
+    {
+      "id": "fact-mupnrsr774ga48",
+      "label": "GISTEMP v4 全球年均不确定度的置信水平（文献值）",
+      "value": 95,
+      "unit": "%",
+      "citationKey": "lenssen2019improvements",
+      "derivedBy": "Lenssen et al. 2019 摘要原文：“The resulting 95% uncertainties are near 0.05 °C”",
+      "where": [
+        "src/manuscript.md#discussion"
+      ],
+      "note": "文献自报值，说明 0.05 °C 是 95% 区间半宽",
+      "recordedAt": "2026-10-01T14:57:42.739Z"
+    }
+  ],
+  "figures": [
+    {
+      "id": "fig-mupbhwchntx9pc",
+      "name": "fig1_annual_anomaly",
+      "kind": "line",
+      "style": "nature",
+      "script": "scripts/fig1_annual_anomaly.py",
+      "scriptSha256": "e454bd807cd4e68a0169353cd75c807d59a841325418b3bd6337fc7f47d349da",
+      "spec": "scripts/fig1_annual_anomaly.spec.json",
+      "datasets": [
+        {
+          "file": "data/GLB.Ts+dSST.csv",
+          "sha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9"
+        }
+      ],
+      "outputs": [
+        {
+          "file": "scripts/fig1_annual_anomaly.pdf",
+          "bytes": 33726,
+          "sha256": "f27cb8f6e366b341193147c960b018198b82c1c7dfad3e6b2e9d082840d68a2b"
+        },
+        {
+          "file": "scripts/fig1_annual_anomaly.png",
+          "bytes": 178015,
+          "sha256": "a1c34734fac6872d8751e6c4028b6b0ba6ac4bd481df87685674141dc8788d98"
+        }
+      ],
+      "columns": 1,
+      "caption": "Annual global mean surface temperature anomaly (land–ocean, relative to the 1951–1980 mean) from the GISTEMP v4 record. The dashed line is an ordinary least-squares fit over all annual values.",
+      "recordedAt": "2026-10-01T14:33:05.891Z",
+      "stats": {
+        "rows": 147,
+        "x": "Year",
+        "columns": {
+          "J-D": {
+            "count": 146,
+            "mean": 0.08123287671232879,
+            "std": 0.40254173552900313,
+            "min": -0.49,
+            "max": 1.29,
+            "first": {
+              "x": 1880,
+              "y": -0.18
+            },
+            "last": {
+              "x": 2025,
+              "y": 1.19
+            },
+            "last_value": 1.19,
+            "slope_per_x": 0.008341029373487678,
+            "slope_se": 0.00038213768985515125,
+            "intercept": -16.204626975022364,
+            "r2": 0.7679030919800113,
+            "ranges": {
+              "1880-1900": {
+                "from": 1880,
+                "to": 1900,
+                "n": 21,
+                "mean": -0.22380952380952382,
+                "std": 0.09457675139674604
+              },
+              "1981-2010 baseline": {
+                "from": 1981,
+                "to": 2010,
+                "n": 30,
+                "mean": 0.4226666666666667,
+                "std": 0.179076815213825
+              },
+              "2015-present": {
+                "from": 2015,
+                "to": 2030,
+                "n": 11,
+                "mean": 1.0054545454545456,
+                "std": 0.14928922508765569
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "fig-mupmxs1xhuqn86",
+      "name": "fig2_monthly_heatmap",
+      "kind": "heatmap",
+      "style": "nature",
+      "script": "scripts/fig2_monthly_heatmap.py",
+      "scriptSha256": "2ca1d3bf98102b41f7b30e0dacfb6b1d362bcce9ecbaebb95257bf46e6e97657",
+      "spec": "scripts/fig2_monthly_heatmap.spec.json",
+      "datasets": [
+        {
+          "file": "data/GLB.Ts+dSST.csv",
+          "sha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9"
+        }
+      ],
+      "outputs": [
+        {
+          "file": "scripts/fig2_monthly_heatmap.pdf",
+          "bytes": 130240,
+          "sha256": "d369fe7fda2009c60d4bbb116c311c415f955e65f413416e72d26b997adeca98"
+        },
+        {
+          "file": "scripts/fig2_monthly_heatmap.png",
+          "bytes": 199166,
+          "sha256": "eaf0b03e6aada0d6aa5dc54714e8541bdb35ea44c07a8e09746f66ca106cb86f"
+        }
+      ],
+      "columns": 2,
+      "caption": "Monthly global mean surface temperature anomalies by year and calendar month (GISTEMP v4, land–ocean, relative to 1951–1980).",
+      "recordedAt": "2026-10-01T14:34:45.338Z"
+    },
+    {
+      "id": "fig-mupmz33ps0fmvs",
+      "name": "fig3_decadal_means",
+      "kind": "custom",
+      "style": "nature",
+      "script": "scripts/fig3_decadal_means.py",
+      "scriptSha256": "4eebaf24e88b9f064ac4b7c3fd87b09e69b3d968a087a04639fbbbf6c01d2cdd",
+      "spec": "scripts/fig3_decadal_means.spec.json",
+      "datasets": [
+        {
+          "file": "data/GLB.Ts+dSST.csv",
+          "sha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9"
+        }
+      ],
+      "outputs": [
+        {
+          "file": "scripts/fig3_decadal_means.pdf",
+          "bytes": 25418,
+          "sha256": "edb7d47a50c3ca5a129f127458136b2d452f2b37b87a401391a609540f2b6122"
+        },
+        {
+          "file": "scripts/fig3_decadal_means.png",
+          "bytes": 108514,
+          "sha256": "f2c6f5a36b9cc0f2f0e804030ca9077b0bc9fc5a254476742a70bd9d127524d1"
+        }
+      ],
+      "columns": 1,
+      "caption": "Decadal mean of the annual global mean surface temperature anomaly (GISTEMP v4, land–ocean, relative to 1951–1980). Error bars are the standard error of the ten annual values in each decade (s.e.m., n = 10). Only complete decades are shown, so the partial 2020s decade is excluded rather than plotted as a decade mean.",
+      "stats": {
+        "rows": 147,
+        "x": "Year",
+        "columns": {
+          "J-D": {
+            "count": 146,
+            "mean": 0.08123287671232879,
+            "std": 0.40254173552900313,
+            "min": -0.49,
+            "max": 1.29,
+            "first": {
+              "x": 1880,
+              "y": -0.18
+            },
+            "last": {
+              "x": 2025,
+              "y": 1.19
+            },
+            "last_value": 1.19,
+            "slope_per_x": 0.008341029373487678,
+            "slope_se": 0.00038213768985515125,
+            "intercept": -16.204626975022364,
+            "r2": 0.7679030919800113,
+            "ranges": {
+              "1880s": {
+                "from": 1880,
+                "to": 1889,
+                "n": 10,
+                "mean": -0.21799999999999997,
+                "std": 0.10304260176149367
+              },
+              "1890s": {
+                "from": 1890,
+                "to": 1899,
+                "n": 10,
+                "mean": -0.24300000000000002,
+                "std": 0.08260347046785223
+              },
+              "1900s": {
+                "from": 1900,
+                "to": 1909,
+                "n": 10,
+                "mean": -0.321,
+                "std": 0.13543756249037167
+              },
+              "1910s": {
+                "from": 1910,
+                "to": 1919,
+                "n": 10,
+                "mean": -0.3350000000000001,
+                "std": 0.1098736648256634
+              },
+              "1920s": {
+                "from": 1920,
+                "to": 1929,
+                "n": 10,
+                "mean": -0.24100000000000002,
+                "std": 0.06838615844355249
+              },
+              "1930s": {
+                "from": 1930,
+                "to": 1939,
+                "n": 10,
+                "mean": -0.124,
+                "std": 0.08846845012017938
+              },
+              "1940s": {
+                "from": 1940,
+                "to": 1949,
+                "n": 10,
+                "mean": 0.042,
+                "std": 0.11496859474559902
+              },
+              "1950s": {
+                "from": 1950,
+                "to": 1959,
+                "n": 10,
+                "mean": -0.048,
+                "std": 0.10559882154224598
+              },
+              "1960s": {
+                "from": 1960,
+                "to": 1969,
+                "n": 10,
+                "mean": -0.030000000000000006,
+                "std": 0.08393118874676116
+              },
+              "1970s": {
+                "from": 1970,
+                "to": 1979,
+                "n": 10,
+                "mean": 0.034999999999999996,
+                "std": 0.10469532516359606
+              },
+              "1980s": {
+                "from": 1980,
+                "to": 1989,
+                "n": 10,
+                "mean": 0.24700000000000003,
+                "std": 0.09153627089241122
+              },
+              "1990s": {
+                "from": 1990,
+                "to": 1999,
+                "n": 10,
+                "mean": 0.38699999999999996,
+                "std": 0.11804424782446811
+              },
+              "2000s": {
+                "from": 2000,
+                "to": 2009,
+                "n": 10,
+                "mean": 0.588,
+                "std": 0.08978987817244337
+              },
+              "2010s": {
+                "from": 2010,
+                "to": 2019,
+                "n": 10,
+                "mean": 0.807,
+                "std": 0.14329844536646041
+              }
+            }
+          }
+        }
+      },
+      "recordedAt": "2026-10-01T14:35:23.125Z"
+    }
+  ],
+  "updatedAt": "2026-10-05T05:25:32.368Z",
+  "allowNarrative": [],
+  "runs": [
+    {
+      "id": "run-mupbhwch8fqajn",
+      "kind": "figure",
+      "name": "fig1_annual_anomaly",
+      "status": "ok",
+      "python": "C:\\Users\\HUAWEI\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\python.exe",
+      "scriptSha256": "740ac34c83adb70eb07654ee7de0af5548bade52baf96d9fcbe137654ef30484",
+      "at": "2026-10-01T09:14:05.441Z"
+    },
+    {
+      "id": "run-mupbifnlpwz5z1",
+      "kind": "figure",
+      "name": "fig1_annual_anomaly",
+      "status": "ok",
+      "python": "C:\\Users\\HUAWEI\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\python.exe",
+      "scriptSha256": "553dcbc6cf30b1b6cd62b24142dfab21ca3ad375e4bdb2be75a2efdd9173c6c7",
+      "at": "2026-10-01T09:14:30.465Z"
+    },
+    {
+      "id": "run-mupmw57ooxvm91",
+      "kind": "figure",
+      "name": "fig1_annual_anomaly",
+      "status": "ok",
+      "python": "C:\\Users\\HUAWEI\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\python.exe",
+      "scriptSha256": "e454bd807cd4e68a0169353cd75c807d59a841325418b3bd6337fc7f47d349da",
+      "at": "2026-10-01T14:33:05.892Z"
+    },
+    {
+      "id": "run-mupmxs1xciab5e",
+      "kind": "figure",
+      "name": "fig2_monthly_heatmap",
+      "status": "ok",
+      "python": "C:\\Users\\HUAWEI\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\python.exe",
+      "scriptSha256": "f5e9a142f08fe30f725029f2662e9107c6851ef51269ecacd4ca62f763247b73",
+      "at": "2026-10-01T14:34:22.149Z"
+    },
+    {
+      "id": "run-mupmy9y2lb7tcx",
+      "kind": "figure",
+      "name": "fig2_monthly_heatmap",
+      "status": "ok",
+      "python": "C:\\Users\\HUAWEI\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\python.exe",
+      "scriptSha256": "2ca1d3bf98102b41f7b30e0dacfb6b1d362bcce9ecbaebb95257bf46e6e97657",
+      "at": "2026-10-01T14:34:45.338Z"
+    },
+    {
+      "id": "run-mupmz33ppe5gen",
+      "kind": "figure",
+      "name": "fig3_decadal_means",
+      "status": "ok",
+      "python": "C:\\Users\\HUAWEI\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\python.exe",
+      "scriptSha256": "4eebaf24e88b9f064ac4b7c3fd87b09e69b3d968a087a04639fbbbf6c01d2cdd",
+      "at": "2026-10-01T14:35:23.125Z"
+    },
+    {
+      "id": "run-mupn1rrsbilycp",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en",
+      "outputs": [
+        "build/manuscript.docx"
+      ],
+      "at": "2026-10-01T14:37:28.408Z"
+    },
+    {
+      "id": "run-mupn3l9j4ebb68",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en",
+      "outputs": [
+        "build/manuscript.docx"
+      ],
+      "at": "2026-10-01T14:38:53.287Z"
+    },
+    {
+      "id": "run-mupn45g6cprols",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en",
+      "outputs": [
+        "build/manuscript.docx"
+      ],
+      "at": "2026-10-01T14:39:19.446Z"
+    },
+    {
+      "id": "run-mupn66kcp2kz4z",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en",
+      "outputs": [
+        "build/manuscript.docx"
+      ],
+      "at": "2026-10-01T14:40:54.204Z"
+    },
+    {
+      "id": "run-mupn7iyzc5pqdq",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en",
+      "outputs": [
+        "build/manuscript.docx"
+      ],
+      "at": "2026-10-01T14:41:56.939Z"
+    },
+    {
+      "id": "run-mupndyc7nq0vya",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en",
+      "outputs": [
+        "build/manuscript.docx"
+      ],
+      "at": "2026-10-01T14:46:56.791Z"
+    },
+    {
+      "id": "run-mupngejamfsqmh",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en",
+      "outputs": [
+        "build/manuscript.docx"
+      ],
+      "at": "2026-10-01T14:48:51.094Z"
+    },
+    {
+      "id": "run-mupnhs9qhri39b",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx"
+      ],
+      "at": "2026-10-01T14:49:55.550Z"
+    },
+    {
+      "id": "run-mupnlb9kw3xy70",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en",
+      "outputs": [
+        "build/manuscript.pdf"
+      ],
+      "at": "2026-10-01T14:52:40.136Z"
+    },
+    {
+      "id": "run-mupnlhmtxlzojp",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en",
+      "outputs": [
+        "build/manuscript.pdf"
+      ],
+      "at": "2026-10-01T14:52:48.389Z"
+    },
+    {
+      "id": "run-mupnr15x8qzv1s",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx"
+      ],
+      "at": "2026-10-01T14:57:06.981Z"
+    },
+    {
+      "id": "run-mupntn2vegz4pf",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en",
+      "outputs": [
+        "build/manuscript.pdf"
+      ],
+      "at": "2026-10-01T14:59:08.695Z"
+    },
+    {
+      "id": "run-mupnugdnot79zi",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "zh",
+      "outputs": [
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-01T14:59:46.667Z"
+    },
+    {
+      "id": "run-mupnxakgbnortp",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "zh",
+      "outputs": [
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-01T15:01:59.104Z"
+    },
+    {
+      "id": "run-muq8gd1p85lpt2",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T00:36:41.101Z"
+    },
+    {
+      "id": "run-muq8kirt96ezim",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T00:39:55.145Z"
+    },
+    {
+      "id": "run-muq950v08wg1zr",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T00:55:51.708Z"
+    },
+    {
+      "id": "run-muqb1mirwju2dk",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T01:49:12.387Z"
+    },
+    {
+      "id": "run-muqb30jq4q3llu",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T01:50:17.222Z"
+    },
+    {
+      "id": "run-muqcj0amiq51a3",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T02:30:43.006Z"
+    },
+    {
+      "id": "run-muqcjzbra74d3b",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T02:31:28.407Z"
+    },
+    {
+      "id": "run-muqcsepg0zt5a5",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T02:38:01.588Z"
+    },
+    {
+      "id": "run-muqdq6vkd1h2io",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T03:04:17.744Z"
+    },
+    {
+      "id": "run-muqdvc3asqhru6",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T03:08:17.782Z"
+    },
+    {
+      "id": "run-muqf8wrekk5aqj",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T03:46:50.714Z"
+    },
+    {
+      "id": "run-muqfh3ah9ld156",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T03:53:12.425Z"
+    },
+    {
+      "id": "run-muqgrb0z02vpnf",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T04:29:08.627Z"
+    },
+    {
+      "id": "run-muqgznpl2j7rmw",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T04:35:38.313Z"
+    },
+    {
+      "id": "run-muqhi81mf9d712",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T04:50:04.474Z"
+    },
+    {
+      "id": "run-muqiax5kh6e4pu",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T05:12:23.384Z"
+    },
+    {
+      "id": "run-muqiyuxwzh08td",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T05:31:00.260Z"
+    },
+    {
+      "id": "run-muqj28tpztreq0",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T05:33:38.222Z"
+    },
+    {
+      "id": "run-mur0yugikk66q1",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T13:54:52.722Z"
+    },
+    {
+      "id": "run-mur327l5gk479s",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T14:53:28.937Z"
+    },
+    {
+      "id": "run-mur3it4kzcejmk",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T15:06:23.348Z"
+    },
+    {
+      "id": "run-mur3wkhftln2jd",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-02T15:17:05.331Z"
+    },
+    {
+      "id": "run-murmqayykhs1vo",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-03T00:04:05.770Z"
+    },
+    {
+      "id": "run-muupqztsg6s3le",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-05T03:51:55.360Z"
+    },
+    {
+      "id": "run-muups7wuj302ze",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-05T03:52:52.494Z"
+    },
+    {
+      "id": "run-muur27clygl7hr",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-05T04:28:37.941Z"
+    },
+    {
+      "id": "run-muur3c2l9yehez",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-05T04:29:30.717Z"
+    },
+    {
+      "id": "run-muurauxw4jkzxh",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-05T04:35:21.764Z"
+    },
+    {
+      "id": "run-muurc0kwbjzxyv",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-05T04:36:15.728Z"
+    },
+    {
+      "id": "run-muut2oj0fbmue3",
+      "kind": "manuscript",
+      "status": "ok",
+      "languages": "en,zh",
+      "outputs": [
+        "build/manuscript.pdf",
+        "build/manuscript.docx",
+        "build/manuscript.zh.pdf",
+        "build/manuscript.zh.docx"
+      ],
+      "at": "2026-10-05T05:24:59.436Z"
+    }
+  ],
+  "lastAudit": {
+    "at": "2026-10-05T05:25:32.368Z",
+    "datasets": 1,
+    "facts": 22,
+    "figures": 3,
+    "references": 19,
+    "critical": 0,
+    "warnings": 0,
+    "untraceableNumbers": 0,
+    "verdict": "PASS"
+  }
+}

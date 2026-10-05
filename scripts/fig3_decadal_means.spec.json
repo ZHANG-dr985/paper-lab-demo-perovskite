@@ -1,0 +1,101 @@
+{
+  "kind": "custom",
+  "name": "fig3_decadal_means",
+  "style": "nature",
+  "data": {
+    "file": "data/GLB.Ts+dSST.csv",
+    "naValues": [
+      "***"
+    ],
+    "numeric": [
+      "J-D"
+    ],
+    "skipRows": 1
+  },
+  "x": "Year",
+  "y": "J-D",
+  "xticks_rotate": 60,
+  "summary": true,
+  "ranges": [
+    {
+      "from": 1880,
+      "label": "1880s",
+      "to": 1889
+    },
+    {
+      "from": 1890,
+      "label": "1890s",
+      "to": 1899
+    },
+    {
+      "from": 1900,
+      "label": "1900s",
+      "to": 1909
+    },
+    {
+      "from": 1910,
+      "label": "1910s",
+      "to": 1919
+    },
+    {
+      "from": 1920,
+      "label": "1920s",
+      "to": 1929
+    },
+    {
+      "from": 1930,
+      "label": "1930s",
+      "to": 1939
+    },
+    {
+      "from": 1940,
+      "label": "1940s",
+      "to": 1949
+    },
+    {
+      "from": 1950,
+      "label": "1950s",
+      "to": 1959
+    },
+    {
+      "from": 1960,
+      "label": "1960s",
+      "to": 1969
+    },
+    {
+      "from": 1970,
+      "label": "1970s",
+      "to": 1979
+    },
+    {
+      "from": 1980,
+      "label": "1980s",
+      "to": 1989
+    },
+    {
+      "from": 1990,
+      "label": "1990s",
+      "to": 1999
+    },
+    {
+      "from": 2000,
+      "label": "2000s",
+      "to": 2009
+    },
+    {
+      "from": 2010,
+      "label": "2010s",
+      "to": 2019
+    }
+  ],
+  "columns": 1,
+  "height_in": 2.4,
+  "formats": [
+    "pdf",
+    "png"
+  ],
+  "dpi": 600,
+  "caption": "Decadal mean of the annual global mean surface temperature anomaly (GISTEMP v4, land–ocean, relative to 1951–1980). Error bars are the standard error of the ten annual values in each decade (s.e.m., n = 10). Only complete decades are shown, so the partial 2020s decade is excluded rather than plotted as a decade mean.",
+  "code": "df = frame.copy()\ndf[\"Year\"] = pd.to_numeric(df[\"Year\"], errors=\"coerce\")\ndf[\"J-D\"] = pd.to_numeric(df[\"J-D\"], errors=\"coerce\")\ndf = df.dropna(subset=[\"Year\", \"J-D\"])\ndf[\"Decade\"] = (df[\"Year\"] // 10 * 10).astype(int)\ngrouped = df.groupby(\"Decade\")[\"J-D\"]\nmean, count, std = grouped.mean(), grouped.count(), grouped.std(ddof=1)\ncomplete = [int(d) for d in mean.index if int(count.loc[d]) == 10]\nvalues = [float(mean.loc[d]) for d in complete]\nsem = [float(std.loc[d]) / np.sqrt(10.0) for d in complete]\nax.bar(range(len(complete)), values, yerr=sem, capsize=1.8, width=0.72,\n       color=COLORS[5], edgecolor=\"black\", linewidth=0.4,\n       error_kw={\"elinewidth\": 0.6, \"ecolor\": \"#333333\"})\nax.set_xticks(range(len(complete)), [f\"{d}s\" for d in complete], rotation=60, ha=\"right\")\nax.set_xlabel(\"Decade\")\nax.set_ylabel(\"Mean anomaly (\\u00b0C)\")\nfor decade, value, error in zip(complete, values, sem):\n    print(f\"[paper-lab] decade {decade} mean={value!r} sem={error!r} n=10\")",
+  "expectSha256": "c9ce0750ca93a8241c42fe86cd5bf54d07b28b21ae650b0ae49a206907018cd9"
+}
