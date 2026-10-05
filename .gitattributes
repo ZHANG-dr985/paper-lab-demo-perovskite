@@ -1,0 +1,13 @@
+# The figure specs pin the dataset by SHA-256 (spec.expectSha256) and the scripts
+# refuse to draw when it does not match. Line-ending normalisation on checkout
+# would change the file's bytes and therefore its hash, so pin LF everywhere.
+* text=auto eol=lf
+
+*.csv  text eol=lf
+*.json text eol=lf
+*.py   text eol=lf
+*.md   text eol=lf
+
+# Figure outputs, if a user regenerates and commits them.
+*.pdf binary
+*.png binary
