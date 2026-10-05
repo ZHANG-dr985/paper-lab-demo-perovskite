@@ -81,13 +81,18 @@ python scripts/fig1_annual_anomaly.py --out ./out
 
 ## 验证状态
 
-在把文件收入本仓库前，三个脚本都在本目录结构下重新运行过：
+在把文件收入本仓库前，三个脚本都在本目录结构下重新运行过。此外还做了一次
+**干净 clone 复现测试**（`git clone` 到空目录后直接运行，模拟他人 clone 后的情况）：
 
 - 三个脚本均以退出码 0 结束，成功生成 PDF + PNG；
 - 加载到的数据集 SHA-256 与 spec 中 `expectSha256` 一致
   （`c9ce0750…18cd9`）；
 - 重新生成的 PNG 与原工程中的图件**逐字节一致**（SHA-256 相同），
-  说明目录调整未影响输出。
+  说明目录调整未影响输出；
+- clone 出来的 `data/GLB.Ts+dSST.csv` 仍为纯 LF、字节数与 hash 不变。
+
+最后一点依赖仓库根目录的 `.gitattributes`：spec 以 SHA-256 锁定数据集，脚本在
+hash 不匹配时会直接报错退出，因此必须避免检出时的行尾转换把 CSV 改写成 CRLF。
 
 ## 许可与引用
 
